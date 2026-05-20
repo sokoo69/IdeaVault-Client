@@ -165,8 +165,8 @@ function MyIdeasContent() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {ideas.map(idea => (
-                <div key={idea._id} className="card" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', padding: '1.25rem', flexWrap: 'wrap' }}>
-                  {idea.imageUrl && <img src={idea.imageUrl} alt={idea.title} style={{ width: '90px', height: '70px', borderRadius: '10px', objectFit: 'cover', flexShrink: 0 }} onError={e => e.target.style.display='none'} />}
+                <div key={idea._id} className="card my-idea-card" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', padding: '1.25rem' }}>
+                  {idea.imageUrl && <img src={idea.imageUrl} alt={idea.title} className="my-idea-card-img" style={{ width: '120px', height: '90px', borderRadius: '10px', objectFit: 'cover', flexShrink: 0 }} onError={e => e.target.style.display='none'} />}
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
                       <span className="badge badge-accent">{idea.category}</span>
@@ -180,7 +180,7 @@ function MyIdeasContent() {
                       <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}><Calendar size={14} /> {new Date(idea.createdAt).toLocaleDateString()}</span>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flexShrink: 0 }}>
+                  <div className="my-idea-actions" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flexShrink: 0 }}>
                     <button onClick={() => router.push(`/ideas/${idea._id}`)} className="btn btn-secondary btn-sm">View</button>
                     <button onClick={() => setEditIdea(idea)} className="btn btn-outline btn-sm">Edit</button>
                     <button onClick={() => setDeleteIdea(idea)} className="btn btn-danger btn-sm">Delete</button>
@@ -191,6 +191,26 @@ function MyIdeasContent() {
           </>
         )}
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .my-idea-card {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+          .my-idea-card-img {
+            width: 100% !important;
+            height: 180px !important;
+          }
+          .my-idea-actions {
+            flex-direction: row !important;
+            width: 100% !important;
+            margin-top: 0.5rem;
+          }
+          .my-idea-actions button {
+            flex: 1;
+          }
+        }
+      `}</style>
     </div>
   )
 }

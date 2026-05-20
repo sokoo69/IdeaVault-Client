@@ -60,7 +60,7 @@ export default function Navbar() {
         boxShadow: scrolled ? (theme === 'dark' ? '0 20px 40px -10px rgba(0,0,0,0.5)' : '0 20px 40px -10px rgba(0,0,0,0.08)') : 'none',
         transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: scrolled ? '64px' : '80px', padding: '0 1.5rem', transition: 'height 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}>
+        <div className="navbar-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: scrolled ? '64px' : '80px', padding: '0 1.5rem', transition: 'height 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }} className="nav-logo">
             <div style={{
               width: '38px', height: '38px',
@@ -314,6 +314,8 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
+          .navbar-inner { padding: 0 1rem !important; }
+          .nav-logo span { font-size: 1.25rem !important; }
         }
         .nav-logo:hover .logo-icon {
           transform: scale(1.08) rotate(10deg) !important;
