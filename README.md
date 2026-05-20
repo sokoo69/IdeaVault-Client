@@ -1,6 +1,6 @@
 # IdeaVault
 
-**Live Demo:** [hvercel.app](hvercel.app) 
+**Live Demo:** [https://idea-vault-sokoo69.vercel.app/](https://idea-vault-sokoo69.vercel.app/) 
 IdeaVault is a community-driven platform where entrepreneurs, developers, and creators can share their startup ideas and get real-time validation from the community. Instead of keeping your next big concept a secret, you can post it here to gather feedback, see if people actually want it, and refine your business model before writing a single line of code.
 
 ## Key Features
