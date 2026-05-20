@@ -5,8 +5,13 @@ const nextConfig = {
       { protocol: 'https', hostname: '**' },
     ],
   },
-  experimental: {
-    // allow @/ to resolve from src/
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://ideavault-server-dccw.onrender.com/api/:path*',
+      },
+    ];
   },
 };
 
